@@ -23,7 +23,7 @@ function videoVisibility() {
 
     switch (breakpoint) {
         case 'md': 
-            yThreshold = 2200;
+            yThreshold = 2125;
             break;
         default:
             yThreshold = 750;
