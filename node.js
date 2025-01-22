@@ -11,7 +11,6 @@ app.use(express.urlencoded({extended : true}));
 
 app.get('/', (req, res) => {
     const scrollTo = req.query.scrollTo || null;
-    console.log(scrollTo);
     res.render('index', { scrollTo, page: 'index' });
 });
 
