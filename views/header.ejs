@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="<%= '/css/styles.css' %>">
+    </head>
+    <body>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <div class="row w-100">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <a class="nav-link custom-nav-link" href="<%= page === 'index' ? '#about' : '/?scrollTo=about' %>">About</a>
+                            <a class="nav-link custom-nav-link" href="<%= page === 'index' ? '#works' : '/?scrollTo=works' %>">Works</a>
+                            <a class="navbar-brand" href="/">
+                                <img src="/images/logo_mono_blue@2x.png" alt="yvngtrace_logo" height="40" width="40" id="nav-logo">
+                            </a>
+                            <a class="nav-link custom-nav-link" href="<%= page === 'index' ? '#services' : '/?scrollTo=services' %>">Services</a>
+                            <a class="nav-link custom-nav-link" href="<%= page === 'index' ? '#contact' : '/?scrollTo=contact' %>">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </body>
+</html>
