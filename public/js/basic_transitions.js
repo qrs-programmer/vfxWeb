@@ -36,32 +36,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-// Handle nav bar scrolling 
-
-
-
-// Handle Visibility of Fixed Background Videos
-
-function videoVisibility() {
-    const bannerVideo = document.getElementById('banner-video');
-    const worksVideo = document.getElementById('works-video');
-    
-    const scrollPosition = window.scrollY;
-    const viewportWidth = document.documentElement.clientWidth
-    const yThreshold = viewportWidth > 768 ? 750 : 1500;
-
-    console.log(viewportWidth);
-
-    // Define the ranges for each video
-    if (scrollPosition < yThreshold) { // Show banner video
-        bannerVideo.style.display = 'block';
-        worksVideo.style.display = 'none';
-    } else { // Show works video
-        bannerVideo.style.display = 'none';
-        worksVideo.style.display = 'block';
-    } 
-}
-
-window.addEventListener('load', videoVisibility); // Display videos on load
-window.addEventListener('scroll', videoVisibility); // Handle video display on scroll
