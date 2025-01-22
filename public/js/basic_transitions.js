@@ -48,9 +48,13 @@ function videoVisibility() {
     const worksVideo = document.getElementById('works-video');
     
     const scrollPosition = window.scrollY;
+    const viewportWidth = document.documentElement.clientWidth
+    const yThreshold = viewportWidth > 768 ? 750 : 1500;
+
+    console.log(viewportWidth);
 
     // Define the ranges for each video
-    if (scrollPosition < 750) { // Show banner video
+    if (scrollPosition < yThreshold) { // Show banner video
         bannerVideo.style.display = 'block';
         worksVideo.style.display = 'none';
     } else { // Show works video
