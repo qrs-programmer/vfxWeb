@@ -6,11 +6,11 @@ frontend:
         - npm install
     build:
       commands:
-        - echo "No build process needed"
+        - npm run build
   artifacts:
-    baseDirectory: public  # Set this to 'public' instead of 'dist'
+    baseDirectory: /
     files:
-      - '**/*'  # Includes everything in the public folder, including subfolders (js, css, images)
+      - '**/*'
   cache:
     paths:
       - node_modules/**/*
