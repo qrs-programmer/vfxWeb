@@ -5,10 +5,9 @@
         <link rel="icon" href="/images/logo_circle_blue@2x.png" type="image/png">
         <meta charset="utf-8">
         <link rel="stylesheet" href="<%= 'https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css' %>" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="<%= 'https://code.jquery.com/jquery-3.4.1.slim.min.js' %>" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="<%= 'https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js' %>" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="<%= 'https://kit.fontawesome.com/fa454c5647.js' %>" crossorigin="anonymous"></script>
         <script defer src="<%= '/js/basic_transitions.js' %>"></script>
+        <script defer src="<%= '/js/handleSmallerScreens.js' %>"></script>
         <link rel="stylesheet" href="<%= '/css/styles.css' %>">  
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -31,11 +30,9 @@
             <div class="container">
                 <div class="row">
                   <div class="video-banner" id="banner-video"> 
-                    <video autoplay muted loop id="vfx-banner">
-                        <source src="/images/loopVFX.mp4" type="video/mp4">
-                    </video>
+
                   </div>
-                  <div class="col-12 text-center">
+                  <div id="text-logo" class="col-12 text-center">
                     <img src="/images/logo_white_2@2x.png" alt="banner-text" class="hidden" id="banner-text1">
                 </div>        
                 </div>
@@ -49,7 +46,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p class="hidden sub-title" id="about-title">ABOUT</p>
-                        <p>Welcome! I'm a passionate Visual Effects Artist based in Montreal, dedicated to bringing high-quality and detailed visual effects to life. With a keen eye for detail and a commitment to excellence, I strive to elevate every project to its highest potential.
+                        <p class="section-content">Welcome! I'm a passionate Visual Effects Artist based in Montreal, dedicated to bringing high-quality and detailed visual effects to life. With a keen eye for detail and a commitment to excellence, I strive to elevate every project to its highest potential.
                             My journey in VFX and video editing has allowed me to collaborate with incredible clients across North America, contributing to content that has captivated millions of viewers on YouTube. My work is driven by creativity, precision, and a love for storytelling through visual effects. Whether you're looking for intricate visual effects, seamless edits, or a touch of cinematic magic, I'm here to bring your vision to reality.</p>
                         <video autoplay muted loop id="logo-loop" class="img-fluid">
                             <source src="/images/logoLoop.mp4" type="video/mp4">
@@ -59,19 +56,18 @@
             </div>
         </section>
 
+
         <!------------- works section ---------------->
 
         <section id="works">
             <div class="container">
                 <div class="row">
                   <div class="video-banner" id="works-video">
-                    <video autoplay muted loop id="works-banner">
-                      <source src="images/loopVFX_1.mp4" alt="loop_VFX" type="video/mp4">
-                    </video>
+                    
                   </div>
                     <div class="col-md-12 text-center" >
                         <p class="hidden sub-title" id="works-title">WORKS</p>
-                        <p id="works-content">Here, you'll find a curated selection of my video editing and visual effects projects, each showcasing my dedication to quality and detail. From captivating YouTube content to intricate visual effects, my works demonstrate a diverse range of styles and techniques.</p>
+                        <p class="section-content" id="works-content">Here, you'll find a curated selection of my video editing and visual effects projects, each showcasing my dedication to quality and detail. From captivating YouTube content to intricate visual effects, my works demonstrate a diverse range of styles and techniques.</p>
                         <button onclick="window.location.href = 'works';" type="button" class="portfolio-btn">VIEW PORTFOLIO</button>
                     </div>
                 </div>
@@ -84,7 +80,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center">
-                        <p>Transform your videos with professional editing and VFX! I specialize in creating dynamic content with special effects, seamless transitions, immersive sound design, and eye-catching title cards. Let’s bring your vision to life!</p>
+                        <p class="section-content">Transform your videos with professional editing and VFX! I specialize in creating dynamic content with special effects, seamless transitions, immersive sound design, and eye-catching title cards. Let’s bring your vision to life!</p>
                     </div>
                     <div class="col-md-6 text-center">
                         <p class="hidden sub-title">SERVICES</p>
@@ -102,7 +98,7 @@
                         <p class="hidden sub-title" id="contact-title">CONTACT</p>
                     </div>
                         <div class="col-md-6 text-left">
-                          <p id="contact-content">📩 Email: yvngtrace1@gmail.com <br>
+                          <p class="section-content" id="contact-content">📩 Email: yvngtrace1@gmail.com <br>
                             📸 Instagram: @yvngtrace<br><br>
                             
                             Reach out for video editing and VFX inquiries!</p>
@@ -110,6 +106,12 @@
                 </div>
             </div>
         </section>
+
+        <div class="d-block d-sm-none" id="breakpoint-xs"></div>
+        <div class="d-none d-sm-block d-md-none" id="breakpoint-sm"></div>
+        <div class="d-none d-md-block d-lg-none" id="breakpoint-md"></div>
+        <div class="d-none d-lg-block d-xl-none" id="breakpoint-lg"></div>
+        <div class="d-none d-xl-block" id="breakpoint-xl"></div>
 
         <%- include('footer.ejs') %>
     </body>
