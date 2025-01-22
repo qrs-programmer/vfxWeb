@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - echo "No build process needed"
+  artifacts:
+    baseDirectory: public  # Set this to 'public' instead of 'dist'
+    files:
+      - '**/*'  # Includes everything in the public folder, including subfolders (js, css, images)
+  cache:
+    paths:
+      - node_modules/**/*
