@@ -1,23 +1,15 @@
-let nextPageToken = "";
 let allVideos = [];
 
 function getVideos() {
-    const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLodur4raO6cVjg_SsqDkc7TNupyHNUi_N&key=AIzaSyDGKV0QwhhZ13fByJsGyJdTb5e_9VCpM0o&pageToken=${nextPageToken}`;
-    
-    fetch(url)
-        .then((result) => result.json())
-        .then((data) => {
-            allVideos.push(...data.items);
-
-            nextPageToken = data.nextPageToken;
-
-            if (nextPageToken) {
-                getVideos();
-            } else {
-                displayVideos();
-            }
-        })
-        .catch((error) => console.error('Error fetching videos:', error));
+    const playlistId = 'PLodur4raO6cVjg_SsqDkc7TNupyHNUi_N';
+  
+    fetch(`/youtube?playlistId=${playlistId}`)
+      .then((result) => result.json())
+      .then((data) => {
+        allVideos.push(...data);
+        displayVideos(); // Render all fetched videos
+      })
+      .catch((error) => console.error('Error fetching videos:', error));
 }
 
 function displayVideos() {
