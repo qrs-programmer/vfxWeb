@@ -2,12 +2,16 @@ let allVideos = [];
 
 function getVideos() {
     const playlistId = 'PLodur4raO6cVjg_SsqDkc7TNupyHNUi_N';
-  
+    
     fetch(`/youtube?playlistId=${playlistId}`)
       .then((result) => result.json())
       .then((data) => {
         allVideos.push(...data);
-        displayVideos(); // Render all fetched videos
+
+        document.getElementById('loading').style.display = "none";
+        document.getElementById('portfolio').style.display = 'block';
+
+        displayVideos(); 
       })
       .catch((error) => console.error('Error fetching videos:', error));
 }
@@ -31,8 +35,7 @@ function displayVideos() {
     });
 }
 
-
 window.onload = () => {
     getVideos();
 };
-console.log(allVideos);
+
